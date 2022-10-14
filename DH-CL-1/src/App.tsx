@@ -1,41 +1,39 @@
-import {clsx} from "clsx";
-import {useState, useContext, useEffect} from "react";
-import {getCharacteres} from "./api/getCharacteres";
+import { useState } from 'react';
+import { Modal, Sidebar } from './components';
 import "./App.css";
-import reactLogo from "./assets/react.svg";
-import Text, { Character } from "./components";
-import {ThemeContext} from "./context/ThemeContext";
 
-function App() {
-	const {theme, toggleTheme} = useContext(ThemeContext);
-	const [characters, setCharacters] = useState([]);
+export default function App() {
 
-	useEffect(() => {
-		getCharacteres().then((value) => setCharacters(value));
-	}, []);
+  const [isOpenSidebar, setIsOpenSidebar] = useState(false);
+  const [isOpenModal, setIsOpenModal] = useState(false);
 
-	return (
-		// <div className={`h-screen w-full ${theme === "dark" ? `bg-black` : `bg-white`}`}>
-		<div className={clsx("h-screen w-ful", theme === "dark" && "bg-black")}>
-			<div className="flex justify-center pt-20">
-				<a href="https://vitejs.dev" target="_blank">
-					<img src="/vite.svg" className="logo" alt="Vite logo" />
-				</a>
-				<a href="https://reactjs.org" target="_blank">
-					<img src={reactLogo} className="logo react" alt="React logo" />
-				</a>
-			</div>
-			<Text.Paragraph>Vite + React</Text.Paragraph>
-			<button
-				className="p-4 bg-blue-700 rounded-lg uppercase text-white mt-4"
-				onClick={toggleTheme}
-			>
-				Cambiar Theme
-			</button>
+  const openSidebar = () => {
+    setIsOpenSidebar(true);
+  }
 
-			<Character characters={characters} />
-		</div>
-	);
+  const closeSidebar = () => {
+    setIsOpenSidebar(false);
+  }
+
+  const openModal = () => {
+    setIsOpenModal(true);
+  }
+
+  const closeModal = () => {
+    setIsOpenModal(false);
+  }
+
+  return (
+    <div className="App">
+      <div className="container">
+        <Sidebar visible={isOpenSidebar} close={closeSidebar} />
+        <h1>useDisclosure custom hook</h1>
+        <div className="button-container">
+          <button onClick={openSidebar}>Open sidebar</button>
+          <button onClick={openModal}>Open modal</button>
+        </div>
+        <Modal visible={isOpenModal} close={closeModal} />
+      </div>
+    </div>
+  );
 }
-
-export default App;
