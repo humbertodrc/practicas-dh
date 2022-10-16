@@ -1,0 +1,12 @@
+.character {
+  width: 200px;
+  margin-bottom: 15px;
+  padding: 12px;
+  background-color: #eeeeee;
+  border-radius: 4px;
+}
+
+.character-image {
+  width: 200px;
+  border-radius: 4px;
+}
