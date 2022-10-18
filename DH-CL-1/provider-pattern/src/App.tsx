@@ -3,7 +3,7 @@ import './App.css'
 
 function App() {
 
-  const togleTheme = () => {
+  const toggleTheme = () => {
     console.log('togleTheme')
   }
 
@@ -16,7 +16,7 @@ function App() {
       </div>
       <h1 className='text-2xl'>React - Provider Pattern</h1>
       <button
-				className="p-4 bg-blue-700 rounded-lg uppercase text-white mt-4" onClick={togleTheme}
+				className="p-4 bg-blue-700 rounded-lg uppercase text-white mt-4" onClick={toggleTheme}
 			>
 				Cambiar Theme
       </button>
