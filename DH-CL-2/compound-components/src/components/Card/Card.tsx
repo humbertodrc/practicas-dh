@@ -1,11 +1,11 @@
-import React from "react";
 import { Characters } from "../../data";
 import "./styles/Card.css";
-export interface CardInterface {
+
+type ChildrenProps = {
 	character: Characters;
 }
 
-const Card: React.FC<CardInterface> = ({character}) => {
+const Card = ({character} : ChildrenProps) => {
 	return (
 		<article>
 			<div>
