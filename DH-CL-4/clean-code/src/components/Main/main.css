@@ -1,0 +1,24 @@
+.grid-container {
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". . ."
+    ". . ."
+    ". . .";
+  grid-area: grid-container;
+}
+
+.card {
+  width: 20vw;
+  height: 45vh;
+  background-color: gray;
+  margin-bottom: 20%;
+}
+
+.card-img {
+  width: 100%;
+  height: 90%;
+}
