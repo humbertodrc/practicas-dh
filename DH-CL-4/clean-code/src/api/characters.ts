@@ -7,3 +7,4 @@ export const getCharacters = async (): Promise<ApiResponse> => {
     res.json()
   );
 };
+

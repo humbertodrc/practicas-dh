@@ -1,56 +1,29 @@
+export class SuperHero {
+	constructor(
+		public name: string = "",
+		public power: string = "",
+		public age: number = 0
+	) {}
 
-export function isDCSuperHero(superHero: string): boolean {
-	if (superHero === "batman" || superHero === "superman" || superHero === "wonderWoman") {
-		return true;
-	} else {
-		return false;
+	printHeroInfo() {
+		// No DRY
+		// Validar que los campos este completos
+		// if (this.name === "" || this.power === "" || this.age === 0) {
+		// 	throw new Error("Los campos no pueden estar vacios");
+		// }
+
+		// if (this.name.length <= 0)
+		// 	throw new Error("El nombre no puede estar vacio");
+		// if (this.power.length <= 0)
+		// 	throw new Error("El poder no puede estar vacio");
+    // if (this.age <= 0)
+    //   throw new Error("La edad debe ser mayor a 0");
+
+		console.log(`Name: ${this.name}`);
+		console.log(`Power: ${this.power}`);
+		console.log(`Age: ${this.age}`);
 	}
 }
 
-
-export function getSuperHeroByColor(color: string): string[] {
-	if (color === "red") {
-		return ["ironMan", "flash", "spiderMan"];
-	} else if (color === "yellow") {
-		return ["acuaman", "wolverine", "firestorm"];
-	} else if (color === "black") {
-		return ["batman", "blackWidow", "blackPanther"];
-	} else {
-		throw Error("the color must be: red, yellow, black");
-	}
-}
-
-
-let isFirstStepWorking = true;
-let isSecondStepWorking = true;
-let isThirdStepWorking = true;
-let isFourthStepWorking = true;
-
-export function workingSteps() {
-	if (isFirstStepWorking === true) {
-		if (isSecondStepWorking === true) {
-			if (isThirdStepWorking === true) {
-				if (isFourthStepWorking === true) {
-					return "Working properly!";
-				} else {
-					return "Fourth step broken.";
-				}
-			} else {
-				return "Third step broken.";
-			}
-		} else {
-			return "Second step broken.";
-		}
-	} else {
-		return "First step broken.";
-	}
-}
-
-
-console.log({ isDCSuperHero: isDCSuperHero("batman"), superHero: "batman" });
-console.log({ isDCSuperHero: isDCSuperHero("superman"), superHero: "superman" });
-console.log({ getSuperHeroByColor: getSuperHeroByColor("red"), color: "red" });
-console.log({ getSuperHeroByColor: getSuperHeroByColor("yellow"), color: "yellow" });
-
-
-console.log({workingSteps: workingSteps()}); 
+const myHero = new SuperHero("Batman", "Volar", 40);
+myHero.printHeroInfo()
