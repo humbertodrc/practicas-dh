@@ -7,6 +7,9 @@ const sources: string[] = [
 ];
 
 const App = () => {
+
+	// Utilizando compounding components y context crear una card que tenga Imagen y Acciones
+
 	return (
 		<>
 			<h1>Compound Component</h1>

@@ -1,9 +1,9 @@
 import React from 'react';
-export interface ImageInterface {
+export interface ImageProps {
 	source: string;
 }
 
-const Image : React.FC<ImageInterface> = ({source}) => {
+const Image : React.FC<ImageProps> = ({source}) => {
 	return (
 		<div className="image-item">
 			<img src={source} alt="Wallpaper de Rick and Morty" />
