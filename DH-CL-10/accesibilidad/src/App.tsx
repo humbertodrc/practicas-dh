@@ -1,14 +1,24 @@
+import { useState } from 'react';
 import './App.css';
 
 import logo from './assets/logo.svg';
 import { Character } from './components/Character';
 import { Modal } from './components/Modal';
-import useModal from './hooks/useModal';
 
 function App() {
 
-  const { isShowing: isAliveShowed, toggle: toggleAlive } = useModal();
-  const { isShowing: isDeadShowed, toggle: toggleDead } = useModal();
+  const [isAliveShowed, setisAliveShowed] = useState(false)
+  const [isDeadShowed, setisDeadShowed] = useState(false)
+
+ 
+
+  const toggleAlive = () => {
+    setisAliveShowed(!isAliveShowed)
+  }
+
+  const toggleDead = () => {
+    setisDeadShowed(!isDeadShowed)
+  }
 
   return (
     <div className="App">
