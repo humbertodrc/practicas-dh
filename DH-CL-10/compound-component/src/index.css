@@ -78,3 +78,18 @@ img {
   position: relative;
   width: 400px;
 }
+
+button{
+  background-color: #ec1b90;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  margin-bottom: 24px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #d20f7a;
+}
