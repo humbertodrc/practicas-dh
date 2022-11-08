@@ -1,3 +1,4 @@
+import Card from './components/Card/Card';
 import { Image } from "./components/Image";
 
 const sources: string[] = [
@@ -14,9 +15,15 @@ const App = () => {
 		<>
 			<h1>Compound Component</h1>
 			<p>Últimas publicaciones</p>
-			{sources.map((source, key) => (
+			{/* {sources.map((source, key) => (
 				<Image source={source} key={key} />
-			))}
+			))} */}
+			{sources.map((source, index) => (
+				<Card key={index}>
+					<Card.Image source={source} />
+					<Card.Actions />
+				</Card>
+				))}
 		</>
 	);
 };
