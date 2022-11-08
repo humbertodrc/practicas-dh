@@ -1,4 +1,4 @@
-import Card from "./components/Card/CardProvider";
+import Card from "./components/Card/Card";
 
 const App = () => {
 	// Utilizando compounding components y context crear una card que tenga Imagen y Acciones
